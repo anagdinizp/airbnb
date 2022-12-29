@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
+import LargeCard from "../components/LargeCard";
 
 export default function Home({ exploreData, cardsData }) {
   return (
@@ -16,7 +17,6 @@ export default function Home({ exploreData, cardsData }) {
       <Banner />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
-
         {/* small cards - data from server (ssr) */}
         <section className="pt-6">
           <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
@@ -36,12 +36,19 @@ export default function Home({ exploreData, cardsData }) {
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
-            {cardsData?.map(({img, title}) => (
-              <MediumCard key={img} img={img} title={title}/>
+            {cardsData?.map(({ img, title }) => (
+              <MediumCard key={img} img={img} title={title} />
             ))}
           </div>
         </section>
 
+        {/* large card */}
+        <LargeCard
+          img="https://links.papareact.com/4cj"
+          title="The Greatest Outdoors"
+          description="Wishlists curated by Airbnb."
+          buttonText="Get Inspired"
+        />
       </main>
     </div>
   );
@@ -54,7 +61,7 @@ export async function getStaticProps() {
 
   const cardsData = await fetch("https://www.jsonkeeper.com/b/2NG4").then(
     (res) => res.json()
-  )
+  );
 
   return {
     props: {
