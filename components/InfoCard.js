@@ -15,7 +15,7 @@ export default function InfoCard({
     <div className="flex py-7 px-2 pr-4 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t">
       {/* inn image */}
       <div className="relative h-28 w-40 md:h-52 md:w-80 flex-shrink-0">
-        <Image src={img} alt="inn picture" fill className="object-cover" />
+        <Image src={img} alt="inn picture" fill className="object-cover rounded-2xl" />
       </div>
       {/* inn info */}
       <div className="flex flex-col flex-grow pl-5">
