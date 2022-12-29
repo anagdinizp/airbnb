@@ -18,7 +18,7 @@ export default function Search({ searchResults }) {
       <Header placeholder={`${location} | ${range} | ${noOfGuests}`} />
 
       <main className="flex">
-        {/* inn and info */}
+        {/* title */}
         <section className="flex-grow pt-14 px-6">
           <p className="text-xm">
             300+ Stays - {range} - for {noOfGuests} guests
@@ -34,7 +34,9 @@ export default function Search({ searchResults }) {
             <p className="button">Rooms and Beds</p>
             <p className="button">More filters</p>
           </div>
-          <div>
+
+          {/* info cards */}
+          <div className="flex flex-col">
             {searchResults.map(
               ({
                 img,
